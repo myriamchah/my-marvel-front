@@ -1,0 +1,20 @@
+header {
+  background-color: var(--red);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+header > .container {
+  padding: 8px;
+  width: 86vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+header img {
+  height: 45px;
+}
