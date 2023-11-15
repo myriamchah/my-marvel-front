@@ -29,7 +29,11 @@ const Characters = () => {
           ? "Loading, please wait"
           : chars.map((char) => {
               return (
-                <Link to={`/comics/${char._id}`} key={char._id}>
+                <Link
+                  to={`/comics/${char._id}`}
+                  key={char._id}
+                  state={{ name: char.name }}
+                >
                   <Card item={char} type="char" />
                 </Link>
               );

@@ -5,6 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "./components/Header/Header";
 import Characters from "./pages/Characters";
+import CharactersComics from "./pages/CharactersComics";
 import Comics from "./pages/Comics";
 
 library.add(faHeart);
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Characters />} />
           <Route path="/comics" element={<Comics />} />
+          <Route path="/comics/:charId" element={<CharactersComics />} />
           <Route path="/favorites" />
         </Routes>
       </Router>
