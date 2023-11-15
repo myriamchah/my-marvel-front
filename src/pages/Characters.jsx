@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "../components/Characters/Card";
+import Card from "../components/Cards/Card";
 
 const Characters = () => {
   const [chars, setChars] = useState([]);
@@ -23,11 +23,14 @@ const Characters = () => {
 
   return (
     <main className="container">
-      {isLoading
-        ? "Loading, please wait"
-        : chars.map((char) => {
-            return <Card {...{ char }} key={char.id} />;
-          })}
+      <h1>Characters</h1>
+      <div className="cards-wrapper">
+        {isLoading
+          ? "Loading, please wait"
+          : chars.map((char) => {
+              return <Card {...{ char }} key={char._id} />;
+            })}
+      </div>
     </main>
   );
 };

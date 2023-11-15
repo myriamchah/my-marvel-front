@@ -1,3 +1,5 @@
+@import url("./assets/styles/typo.css");
+
 :root {
   --red: #ee181e;
 }
@@ -10,4 +12,11 @@ body {
 main.container {
   padding-top: 61px;
   width: 86vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main a {
+  color: black;
+  text-decoration: none;
 }
