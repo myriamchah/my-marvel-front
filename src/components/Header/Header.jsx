@@ -12,7 +12,7 @@ const Header = () => {
         <div className="container">
           <img src={logo} alt="logo Marvel" onClick={() => navigate("/")} />
           <div>
-            <Link to="/characters">CHARACTERS</Link>
+            <Link to="/">CHARACTERS</Link>
             <Link to="/comics">COMICS</Link>
             <Link to="/favorites">
               <FontAwesomeIcon icon="heart" />

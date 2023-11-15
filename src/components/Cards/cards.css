@@ -4,6 +4,8 @@
   flex-wrap: wrap;
 }
 
+/* CHARACTERS */
+
 .char-card {
   display: flex;
   flex-direction: column;
@@ -30,4 +32,33 @@
 .char-card p:hover {
   height: fit-content;
   overflow: visible;
+}
+
+/* COMICS */
+
+.comic-card {
+  display: flex;
+  width: 40%;
+  padding: 24px;
+}
+
+.comic-card img {
+  border-radius: 4px;
+  width: 198px;
+  height: 240px;
+  box-shadow: 10px 5px 5px black;
+  margin-bottom: 24px;
+}
+
+.comic-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  padding: 32px;
+}
+
+.comic-card > div > div,
+.char-card > div > div {
+  font-weight: 600;
 }

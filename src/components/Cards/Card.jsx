@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
 import "./cards.css";
 
-const Card = ({ char }) => {
+const Card = ({ item, type }) => {
   return (
-    <Link to={`/comics/${char._id}`}>
-      <div className="char-card">
-        <img
-          src={char.thumbnail.path + "." + char.thumbnail.extension}
-          alt={char.name}
-        />
-        <div>{char.name}</div>
-        <p>{char.description}</p>
+    <div className={`${type}-card`}>
+      <img
+        src={item.thumbnail.path + "." + item.thumbnail.extension}
+        alt={item.name || item.title}
+      />
+      <div>
+        <div>{item.name || item.title}</div>
+        <p>{item.description}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 export default Card;

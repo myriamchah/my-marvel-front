@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Card from "../components/Cards/Card";
 
 const Characters = () => {
-  const [chars, setChars] = useState([]);
+  const [comics, setComics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     try {
       const fetchData = async () => {
         setIsLoading(true);
-        const response = await axios.get(`http://localhost:3000/characters`);
-        setChars(response.data.results);
+        const response = await axios.get(`http://localhost:3000/comics`);
+        setComics(response.data.results);
         setIsLoading(false);
       };
       fetchData();
@@ -23,16 +22,12 @@ const Characters = () => {
 
   return (
     <main className="container">
-      <h1>C H A R A C T E R S</h1>
+      <h1>C O M I C S</h1>
       <div className="cards-wrapper">
         {isLoading
           ? "Loading, please wait"
-          : chars.map((char) => {
-              return (
-                <Link to={`/comics/${char._id}`} key={char._id}>
-                  <Card item={char} type="char" />
-                </Link>
-              );
+          : comics.map((comic) => {
+              return <Card item={comic} type="comic" key={comic._id} />;
             })}
       </div>
     </main>
