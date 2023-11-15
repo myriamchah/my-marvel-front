@@ -7,7 +7,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.img-as-bg {
-  height: 100vh;
-  width: 100vw;
+main.container {
+  padding-top: 61px;
+  width: 86vw;
 }

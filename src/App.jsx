@@ -4,7 +4,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "./components/Header/Header";
-import Home from "./pages/Home";
+import Characters from "./pages/Characters";
 library.add(faHeart);
 
 function App() {
@@ -13,7 +13,9 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Characters />} />
+          <Route path="/comics" />
+          <Route path="/favorites" />
         </Routes>
       </Router>
     </>
