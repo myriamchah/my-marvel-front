@@ -1,4 +1,4 @@
-@import url("./assets/styles/typo.css");
+@import "./assets/styles/typo.css";
 
 :root {
   --red: #ee181e;

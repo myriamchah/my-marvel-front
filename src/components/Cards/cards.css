@@ -70,3 +70,14 @@
 .comic-card p {
   font-size: 14px;
 }
+
+/* FAVORITES */
+
+.fav-icon {
+  color: white;
+  position: absolute;
+  margin-top: 28px;
+  font-size: 19px;
+  margin-left: 112px;
+  opacity: 0.5;
+}
