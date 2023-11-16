@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Card from "../components/Cards/Card";
 
-const CharactersComics = () => {
+const CharactersComics = ({ toggleFav, favs }) => {
   const [comics, setComics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
@@ -36,7 +36,14 @@ const CharactersComics = () => {
           ? "Loading, please wait"
           : comics &&
             comics.map((comic) => {
-              return <Card key={comic._id} item={comic} type="comic" />;
+              return (
+                <Card
+                  key={comic._id}
+                  item={comic}
+                  type="comic"
+                  {...{ toggleFav, favs }}
+                />
+              );
             })}
       </div>
     </main>

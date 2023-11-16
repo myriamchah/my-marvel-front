@@ -5,7 +5,7 @@ import Card from "../components/Cards/Card";
 import Search from "../components/Search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Characters = ({ setFavs, favs }) => {
+const Characters = ({ toggleFav, favs }) => {
   const [chars, setChars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searched, setSearched] = useState("");
@@ -41,7 +41,7 @@ const Characters = ({ setFavs, favs }) => {
                   key={char._id}
                   state={{ name: char.name }}
                 >
-                  <Card item={char} type="char" {...{ setFavs, favs }} />
+                  <Card item={char} type="char" {...{ toggleFav, favs }} />
                 </Link>
               );
             })}

@@ -4,7 +4,7 @@ import Card from "../components/Cards/Card";
 import Search from "../components/Search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Comics = () => {
+const Comics = ({ toggleFav, favs }) => {
   const [comics, setComics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searched, setSearched] = useState("");
@@ -34,7 +34,14 @@ const Comics = () => {
         {isLoading
           ? "Loading, please wait"
           : comics.map((comic) => {
-              return <Card item={comic} type="comic" key={comic._id} />;
+              return (
+                <Card
+                  item={comic}
+                  type="comic"
+                  key={comic._id}
+                  {...{ toggleFav, favs }}
+                />
+              );
             })}
       </div>
       <div className="pagination">

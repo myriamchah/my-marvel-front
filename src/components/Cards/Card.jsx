@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./cards.css";
 
-const Card = ({ item, type, setFavs, favs }) => {
+const Card = ({ item, type, toggleFav, favs }) => {
   const addEllipsis = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
@@ -16,10 +16,12 @@ const Card = ({ item, type, setFavs, favs }) => {
       <FontAwesomeIcon
         icon="heart"
         className="fav-icon"
-        style={favs.includes(item) ? { color: "red", opacity: "1" } : ""}
+        style={
+          favs && favs[0].includes(item) ? { color: "red", opacity: "1" } : ""
+        }
         onClick={(e) => {
           e.preventDefault();
-          setFavs([...favs, item]);
+          toggleFav(item, type);
         }}
       />
       <div>

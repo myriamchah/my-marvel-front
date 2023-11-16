@@ -17,6 +17,7 @@ header > .container {
 
 header img {
   height: 45px;
+  cursor: pointer;
 }
 
 header a {
