@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBackward,
+  faForward,
+  faHeart,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Header from "./components/Header/Header";
 import Characters from "./pages/Characters";
 import CharactersComics from "./pages/CharactersComics";
 import Comics from "./pages/Comics";
 
-library.add(faHeart);
+library.add(faHeart, faMagnifyingGlass, faForward, faBackward);
 
 function App() {
   return (

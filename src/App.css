@@ -20,3 +20,26 @@ main a {
   color: black;
   text-decoration: none;
 }
+
+.pagination {
+  margin: 32px;
+}
+
+.pagination button {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 8px 5px 5px grey;
+  font-weight: 600;
+}
+
+.pagination button:disabled {
+  background-color: lightgray;
+  color: white;
+  cursor: not-allowed;
+  box-shadow: 8px 5px 5px grey;
+}
