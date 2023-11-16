@@ -10,9 +10,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 240px;
+  width: 100px;
   padding: 24px;
   text-align: center;
+}
+
+.char-card:hover {
+  transform: translateZ(10px) scale(1.2);
+  transition: all 0.5s ease;
 }
 
 .char-card img {
@@ -24,28 +29,28 @@
 }
 
 .char-card p {
-  height: 60px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  display: none;
+  font-size: 12px;
 }
 
-.char-card p:hover {
-  height: fit-content;
-  overflow: visible;
+.char-card:hover p {
+  display: inline;
+  white-space: nowrap;
 }
 
 /* COMICS */
 
 .comic-card {
   display: flex;
-  width: 40%;
+  width: 45%;
   padding: 24px;
 }
 
 .comic-card img {
   border-radius: 4px;
-  width: 198px;
+  width: 160px;
   height: 240px;
+  aspect-ratio: 2/3;
   box-shadow: 10px 5px 5px black;
   margin-bottom: 24px;
 }
@@ -53,7 +58,6 @@
 .comic-card > div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: start;
   padding: 32px;
 }
@@ -61,4 +65,8 @@
 .comic-card > div > div,
 .char-card > div > div {
   font-weight: 600;
+}
+
+.comic-card p {
+  font-size: 14px;
 }
