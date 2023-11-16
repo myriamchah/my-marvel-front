@@ -30,7 +30,7 @@ const Characters = () => {
   return (
     <main className="container">
       <h1>C H A R A C T E R S</h1>
-      <Search {...{ searched, setSearched }} />
+      <Search {...{ searched, setSearched, setSkip }} />
       <div className="cards-wrapper">
         {isLoading
           ? "Loading, please wait"
@@ -48,7 +48,7 @@ const Characters = () => {
       </div>
       <div className="pagination">
         <button
-          onClick={(e) => {
+          onClick={() => {
             setSkip(skip - 48);
           }}
           disabled={!skip}
@@ -57,10 +57,10 @@ const Characters = () => {
           &nbsp; Previous page
         </button>
         <button
-          onClick={(e) => {
+          onClick={() => {
             setSkip(skip + 48);
           }}
-          disabled={skip + 48 < chars.length}
+          disabled={chars.length < 48}
         >
           Next page &nbsp;
           <FontAwesomeIcon icon="forward" />

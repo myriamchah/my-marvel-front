@@ -24,12 +24,12 @@ const Comics = () => {
     } catch (error) {
       console.log(error.message);
     }
-  }, [searched]);
+  }, [searched, skip]);
 
   return (
     <main className="container">
       <h1>C O M I C S</h1>
-      <Search {...{ searched, setSearched }} />
+      <Search {...{ searched, setSearched, setSkip }} />
       <div className="cards-wrapper">
         {isLoading
           ? "Loading, please wait"
@@ -39,7 +39,7 @@ const Comics = () => {
       </div>
       <div className="pagination">
         <button
-          onClick={(e) => {
+          onClick={() => {
             setSkip(skip - 8);
           }}
           disabled={!skip}
@@ -48,10 +48,10 @@ const Comics = () => {
           &nbsp; Previous page
         </button>
         <button
-          onClick={(e) => {
+          onClick={() => {
             setSkip(skip + 8);
           }}
-          disabled={skip + 8 < comics.length}
+          disabled={comics.length < 8}
         >
           Next page &nbsp;
           <FontAwesomeIcon icon="forward" />

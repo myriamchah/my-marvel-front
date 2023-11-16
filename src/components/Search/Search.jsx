@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./search.css";
 
-const Search = ({ searched, setSearched }) => {
+const Search = ({ searched, setSearched, setSkip }) => {
   return (
     <div className="input-search">
       <input
@@ -9,6 +9,7 @@ const Search = ({ searched, setSearched }) => {
         placeholder="Looking for someone in particular? "
         onChange={(e) => {
           setSearched(e.target.value);
+          setSkip(0);
         }}
         value={searched}
       />
