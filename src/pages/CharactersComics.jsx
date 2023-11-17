@@ -17,7 +17,7 @@ const CharactersComics = ({ toggleFav, favs }) => {
       const fetchData = async () => {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/comics/${charId}`
+          `https://site--backend-marvel--rv77lmsyy8s9.code.run/comics/${charId}`
         );
         setComics(response.data.comics);
         setIsLoading(false);

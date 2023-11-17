@@ -15,7 +15,7 @@ const Comics = ({ toggleFav, favs }) => {
       const fetchData = async () => {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/comics?limit=8&title=${searched}`
+          `https://site--backend-marvel--rv77lmsyy8s9.code.run/comics?limit=8&title=${searched}`
         );
         setComics(response.data.results);
         setIsLoading(false);

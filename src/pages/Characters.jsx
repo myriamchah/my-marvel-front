@@ -16,7 +16,7 @@ const Characters = ({ toggleFav, favs }) => {
       const fetchData = async () => {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/characters?limit=48&name=${searched}&skip=${skip}`
+          `https://site--backend-marvel--rv77lmsyy8s9.code.run/characters?limit=48&name=${searched}&skip=${skip}`
         );
         setChars(response.data.results);
         setIsLoading(false);
