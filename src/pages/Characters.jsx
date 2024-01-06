@@ -34,17 +34,21 @@ const Characters = ({ toggleFav, favs }) => {
       <div className="cards-wrapper">
         {isLoading
           ? "Loading, please wait"
-          : chars.map((char) => {
-              return (
-                <Link
-                  to={`/comics/${char._id}`}
-                  key={char._id}
-                  state={{ name: char.name }}
-                >
-                  <Card item={char} type="char" {...{ toggleFav, favs }} />
-                </Link>
-              );
-            })}
+          : chars
+              .filter(
+                (char) => !char.thumbnail.path.includes("image_not_available")
+              )
+              .map((char) => {
+                return (
+                  <Link
+                    to={`/comics/${char._id}`}
+                    key={char._id}
+                    state={{ name: char.name }}
+                  >
+                    <Card item={char} type="char" {...{ toggleFav, favs }} />
+                  </Link>
+                );
+              })}
       </div>
       <div className="pagination">
         <button
